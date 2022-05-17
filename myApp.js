@@ -6,8 +6,16 @@ let app = express();
 //     res.send("Hello Express");
 // })
 
+app.use('/public', express.static(__dirname + '/public'));
+
+//Serving an html file from server
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/index.html');
 })
+
+
+
+
+
 
 module.exports = app;
