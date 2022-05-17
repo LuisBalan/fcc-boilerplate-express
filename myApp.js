@@ -46,7 +46,7 @@ let app = express();
 
 //Chain Middleware to Create a Time Server
 
-app.get('/now', function(req, res){
+app.get('/now', function(req, res, next){
     req.time = new Date().toString();
     next();
 }, function(req, res){
