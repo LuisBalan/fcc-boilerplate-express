@@ -17,13 +17,16 @@ let app = express();
 //Serving a JSON response on an specific route
 app.get('/json', (req, res) => {
     let responseValue;
+    let stringResponse = "Hello json"
     if(process.env.MESSAGE_STYLE == "uppercase"){
-        responseValue = "HELLO JSON"
+        responseValue = stringResponse.toUpperCase();
     }else{
-        responseValue = "Hello json"
+        responseValue = stringResponse;
     };
     res.json({message: responseValue});
 });
+let a = "string";
+
 
 
 
