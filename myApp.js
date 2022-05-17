@@ -39,11 +39,19 @@ let app = express();
 //     next();
 // });
 
-app.use((req, res) => {
-    console.log(`${req.method} ${req.path} - ${req.ip}`)
-    next();
-});
+// app.use((req, res) => {
+//     console.log(`${req.method} ${req.path} - ${req.ip}`)
+//     next();
+// });
 
+//Chain Middleware to Create a Time Server
+
+app.get('/now', function(req, res){
+    req.time = new Date().toString();
+    next();
+}, function(req, res){
+    res.json({time: req.time})
+});
 
 
 
