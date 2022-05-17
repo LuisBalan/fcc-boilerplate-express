@@ -16,16 +16,16 @@ let app = express();
 
 //Serving a JSON response on an specific route
 
-app.get('/json', (req, res) => {
-    let responseValue;
-    let stringResponse = "Hello json"
-    if(process.env.MESSAGE_STYLE == "uppercase"){
-        responseValue = stringResponse.toUpperCase();
-    }else{
-        responseValue = stringResponse;
-    };
-    res.json({message: responseValue});
-});
+// app.get('/json', (req, res) => {
+//     let responseValue;
+//     let stringResponse = "Hello json"
+//     if(process.env.MESSAGE_STYLE == "uppercase"){
+//         responseValue = stringResponse.toUpperCase();
+//     }else{
+//         responseValue = stringResponse;
+//     };
+//     res.json({message: responseValue});
+// });
 
 //Implement a Root-Level Request Logger Middleware
 
@@ -53,6 +53,11 @@ app.get('/json', (req, res) => {
 //     res.json({time: req.time})
 // });
 
+// Get Route Parameter Input from the Client
+
+app.get('/:word/:anotherWord/echo', (req, res) => {
+    res.send({echo: req.params.word});
+})
 
 
 
