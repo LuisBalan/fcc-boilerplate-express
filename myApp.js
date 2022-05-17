@@ -15,7 +15,13 @@ let app = express();
 
 //Serving a JSON response on an specific route
 app.get('/json', (req, res) => {
-    res.json({message: "Hello json"});
+    let responseValue;
+    if(process.env.MESSAGE_STYLE == "uppercase"){
+        responseValue = "HELLO JSON"
+    }else{
+        responseValue = "Hello json"
+    };
+    res.json({message: responseValue});
 });
 
 
