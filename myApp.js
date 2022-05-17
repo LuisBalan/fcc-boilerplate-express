@@ -55,7 +55,7 @@ let app = express();
 
 // Get Route Parameter Input from the Client
 
-app.get('/:word/:anotherWord/echo', (req, res) => {
+app.get('/:word/echo', (req, res) => {
     res.send({echo: req.params.word});
 })
 
