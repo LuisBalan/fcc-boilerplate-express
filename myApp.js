@@ -63,11 +63,11 @@ let app = express();
 
 // Get Query Parameter Input from the Client
 
-app.get('/name', (req, res) => {
-    const firstName = req.query.first;
-    const lastName = req.query.last;
-    res.send({ name: `${firstName} ${lastName}`})
-})
+// app.get('/name', (req, res) => {
+//     const firstName = req.query.first;
+//     const lastName = req.query.last;
+//     res.send({ name: `${firstName} ${lastName}`})
+// })
 
 // Use body-parser to Parse POST Requests
 
