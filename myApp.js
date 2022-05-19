@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const urlencoded = require('body-parser/lib/types/urlencoded');
 require('dotenv').config()
 let app = express();
 
