@@ -69,4 +69,8 @@ app.get('/name', (req, res) => {
     res.send({ name: `${firstName} ${lastName}`})
 })
 
+// Use body-parser to Parse POST Requests
+
+app.use(bodyParser.urlencoded(extended=false));
+
 module.exports = app;
